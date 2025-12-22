@@ -1,0 +1,188 @@
+
+                           MULTILINGUAL T5 - ENVIRONMENT SELECTOR
+                                        
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        Which environment should I use?                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+                                Start Here ⬇️
+
+                        Do you have Docker installed?
+                                  │
+                    ┌─────────────┴─────────────┐
+                   YES                         NO
+                    │                           │
+                    ↓                           ↓
+            ┌───────────────┐           ┌─────────────────┐
+            │ Ready to use  │           │  Do you have a  │
+            │ Docker? ✓     │           │  Python IDE or  │
+            └───────────────┘           │  terminal open? │
+                    │                   └─────────────────┘
+                    ↓                           │
+          ┌──────────────────┐        ┌────────┴────────┐
+          │ Use: DOCKER 🐳   │       YES              NO
+          │ (Production-ready)│       │                 │
+          │ Go to: DOCKER_   │       ↓                 ↓
+          │ SETUP.md         │   ┌─────────┐     ┌──────────┐
+          └──────────────────┘   │ Use:    │     │ Use:     │
+                                 │ LOCAL   │     │ COLAB ☁️  │
+                                 │ PYTHON  │     │ (Easiest)│
+                                 │ 💻      │     │ Go to:   │
+                                 │ Go to:  │     │ MT5_    │
+                                 │ SETUP_  │     │ Colab_  │
+                                 │ GUIDE.  │     │ Setup.  │
+                                 │ md      │     │ ipynb   │
+                                 └─────────┘     └──────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                            QUICK COMPARISON
+
+Environment    |  Setup Time  |  Learning Curve  |  Best For
+─────────────────────────────────────────────────────────────────────────────
+Google Colab   |  ⚡ 5 min    |  ★★☆☆☆ EASY    | Learning, Testing, GPU-free
+Docker         |  ⏱️ 15 min   |  ★★★☆☆ MEDIUM  | Production, Teams, Deployment
+Local Python   |  ⏳ 30+ min  |  ★★★★☆ HARD    | Development, Full Control
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                        DECISION FLOWCHART IN DETAIL
+
+
+                            ┌──────────────────────┐
+                            │ START - Run mT5 Code │
+                            └──────────┬───────────┘
+                                       │
+                    ┌──────────────────┴──────────────────┐
+                    │                                      │
+           ┌────────▼────────┐                  ┌────────▼────────┐
+           │ Time Conscious? │                  │ Want Simplicity?│
+           └────────┬────────┘                  └────────┬────────┘
+                    │                                    │
+         ┌──────────┴──────────┐            ┌───────────┴──────────┐
+        YES                   NO           YES                     NO
+         │                    │             │                      │
+         ▼                    ▼             ▼                      ▼
+    ┌─────────┐         ┌──────────┐  ┌────────┐         ┌──────────────┐
+    │ COLAB ☁️ │        │ DOCKER 🐳│  │ COLAB  │        │ DOCKER or    │
+    │ 5 min   │        │ 15 min   │  │ ☁️     │        │ Local Python │
+    │ GO! ⚡   │        │ GO! 🚀   │  │ GO! ⚡  │        │ 15-30 min    │
+    └─────────┘        └──────────┘  └────────┘        │ GO! 🚀       │
+                                                        └──────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                      STEP-BY-STEP FOR EACH ENVIRONMENT
+
+
+🌐 GOOGLE COLAB (Cloud - Recommended First Time):
+───────────────────────────────────────────────────
+  1. Go to: https://colab.research.google.com/
+  2. Click: File → Open notebook
+  3. Upload: MT5_Colab_Setup.ipynb
+  4. Click: Runtime → Run all
+  5. Wait: ~10 minutes for first run
+  6. ✓ Done! Start experimenting
+
+
+🐳 DOCKER (Containerized - Recommended for Teams):
+──────────────────────────────────────────────────
+  1. Install Docker Desktop from: https://docker.com/products/docker-desktop
+  2. Open PowerShell / Terminal
+  3. cd multilingual-t5-master
+  4. docker-compose up -d
+  5. docker-compose exec mt5 bash
+  6. ✓ Inside container - Run Python code
+
+
+💻 LOCAL PYTHON (Direct - For Advanced Users):
+──────────────────────────────────────────────
+  1. Open PowerShell
+  2. cd multilingual-t5-master
+  3. python -m venv venv
+  4. .\venv\Scripts\Activate.ps1
+  5. pip install tensorflow t5 seqio
+  6. python multilingual_t5/utils.py
+  7. ✓ Running locally
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                        WHEN TO USE EACH ENVIRONMENT
+
+
+USE COLAB IF:
+  ✓ You want to start immediately
+  ✓ You don't have much disk space
+  ✓ You want free GPU access
+  ✓ You're learning/experimenting
+  ✓ You don't want to install anything
+  → Best for: First-time users, learning, rapid prototyping
+
+
+USE DOCKER IF:
+  ✓ You need reproducibility
+  ✓ You're working in a team
+  ✓ You plan to deploy to cloud
+  ✓ You want all dependencies isolated
+  ✓ You use multiple projects
+  → Best for: Production, deployment, professional teams
+
+
+USE LOCAL PYTHON IF:
+  ✓ You need maximum performance
+  ✓ You use a professional IDE (PyCharm, VS Code)
+  ✓ You're doing heavy development
+  ✓ You need full system integration
+  ✓ You prefer direct control
+  → Best for: Professional developers, complex workflows
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                        FILES TO READ FOR MORE INFO
+
+
+For Complete Setup Guide:
+  📘 SETUP_GUIDE.md            ← Start here for detailed info
+
+
+For Quick Start:
+  📖 QUICK_START.md            ← Fast overview of all options
+
+
+For Google Colab:
+  📔 MT5_Colab_Setup.ipynb     ← Copy cells here
+
+
+For Docker:
+  🐳 DOCKER_SETUP.md           ← Docker-specific commands
+  📄 Dockerfile                 ← Docker image config
+  ⚙️ docker-compose.yml        ← Orchestration config
+
+
+For Original Project:
+  📚 README.md                 ← Original mT5 documentation
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                        WHICH ONE DO YOU WANT NOW?
+
+
+                    ☁️ COLAB (5 min)       → Open MT5_Colab_Setup.ipynb
+                    🐳 DOCKER (15 min)    → Read DOCKER_SETUP.md
+                    💻 LOCAL (30+ min)    → Read SETUP_GUIDE.md option 3
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                           Have Questions?
+
+  Google Colab Issues:  https://colab.research.google.com/
+  Docker Issues:        https://docs.docker.com/
+  mT5 Issues:          https://github.com/google-research/multilingual-t5
+
+═══════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mt5:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: multilingual-t5:latest
+    container_name: mt5-workspace
+    ports:
+      - "8888:8888"  # Jupyter Lab
+    volumes:
+      - .:/workspace
+      - mt5-cache:/root/.cache
+    environment:
+      - JUPYTER_TOKEN=mt5password
+      - TF_CPP_MIN_LOG_LEVEL=2
+    stdin_open: true
+    tty: true
+    command: bash
+
+volumes:
+  mt5-cache:
